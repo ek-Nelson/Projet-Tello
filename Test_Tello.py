@@ -28,19 +28,21 @@ def wake_up():
     me.rotate_clockwise(-90)
     time.sleep(3)
     time.sleep(3)
+    print ("Tello waked-up")
 
-def move_left():
+def step1():
     time.sleep(2)
     me.rotate_clockwise(90)
     time.sleep(3)
     me.move_forward(20)
     time.sleep(4)
+    print("Tello reached step1")
 
-def move_right():
+def step2():
     time.sleep(2)
     me.rotate_clockwise(-90)
     time.sleep(3)
-    me.land()
+    print("Tello reached step2")
 
 
 
@@ -67,10 +69,10 @@ while True:
                 wake_up()
                 me.streamon()
             elif s.startswith('mvl'):
-                move_left()
+                step1() #move_left
                 me.streamon()
             elif s.startswith('mvr'):
-                move_right()
+                step2()
                 me.streamon()
 
 
